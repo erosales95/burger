@@ -2,11 +2,6 @@
 
 <form class="create-form">
 
-  <div class="form-group">
-    <label for="ca">Create your burger:</label>
-    <input type="text" id="ca" name="name">
-  </div>
-
 {{!-- Burgers that are not devoured --}}
 
 <ol>
@@ -24,10 +19,16 @@
 <ol>
   {{#each burgers}}
     {{#if devoured}}
-      {{> burgers/burger-block sleep=false}}
+      {{> burgers/burger-block devoured=false}}
     {{/if}}
   {{/each}}
 </ol>
 
+  <div class="form-group">
+    <label for="ca">Create your burger:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
   <button type="submit">Add Burger</button>
+
 </form>
